@@ -1,0 +1,172 @@
+html
+{
+  -webkit-tap-highlight-color:transparent;
+  user-select: none;
+}
+
+.game-page {
+    text-align: center;
+}
+
+.playGame {
+    font-size: 26px;
+}
+
+.yourCity {
+    font-size: 20px;   
+}
+
+.text-set-choice {
+    text-align: center;
+    margin: 5px 0 0;
+    grid-column: 1 / -1;
+}
+
+#choice-photos {
+    display: grid;
+    grid-template-columns: repeat(2, 30vw);
+    grid-template-rows: max-content 1fr 1fr;
+    justify-content: center;
+    align-items: stretch;
+    max-height: 100vh;
+    margin-bottom: 10px;
+}
+
+ .title-photos {
+    margin: 10px 20px;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+} 
+
+.title-photos > img {
+    width: 100%;
+    height: calc(100% - 36px);
+    object-fit: cover;
+}
+
+.title-photos:hover {
+    transform: scale(1.1);
+}
+
+.title-photos:hover img {
+    border: 2px solid red;
+}
+
+.game-page {
+    display: none;  
+}
+
+.text-set-game {
+    text-align: center;
+    margin: 20px 0 0;
+}
+
+.cards {
+    display: grid;
+    padding-right: 10%;
+    padding-left: 10%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 30% 30% 30%;
+    grid-gap: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.cards img{
+    height: 100%;
+    width: 100%
+}
+
+.card-cover {
+    position: absolute;
+}
+
+.winner-page {
+    display: none;
+    text-align: center;
+    height: 100vh;
+}
+
+.button-winner {
+    margin: 20px;
+}
+
+.winner-text {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.summary {
+    flex: 1;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+#timer {
+    flex: 1;
+    margin-top: 6%;
+    margin-right: 3%;
+}
+
+#timer > div {
+    white-space: nowrap;
+}
+
+.me {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    display: flex;
+}
+
+@media screen and (max-width: 1050px) {
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 25% 25% 25% 25%;
+    }
+
+    #choice-photos {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: max-content repeat(2, 1fr);
+        margin: 20px;
+    }
+}
+
+@media screen and  (max-width: 400px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 15% 15% 15% 15% 15% 15%;
+    }
+
+    .winner-text {
+        flex-direction: column;
+    }
+    
+    #timer {
+        right: unset;
+    }
+
+    #choice-photos {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: max-content repeat(4, 1fr);
+        margin: 20px;
+    }
+
+    .playGame {
+        font-size: 24px;
+    
+    }
+}
